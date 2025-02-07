@@ -1,34 +1,59 @@
-## プロジェクト構成
+このプロジェクトは、Flask (Python) をバックエンドとして使用し、PostgreSQL をデータベースに採用した Web アプリケーションです。開発環境は Docker を利用して構築されています。
 
-- **バックエンド:** Flask (Python)
-- **データベース:** PostgreSQL
-- **環境構築:** Docker
+環境構成
 
----
+バックエンド: Flask (Python)
 
-### ⚠ 前提条件
-事前に[Docker Desktop](https://www.docker.com/ja-jp/products/docker-desktop/)をインストールしておいてください。
+データベース: PostgreSQL
 
----
+環境構築: Docker
 
-## 起動方法
-- このプロジェクトではDockerを使用しているので、`docker`コマンドを使います。
+前提条件
 
-### 起動
-dockerのデスクトップアプリを起動した状態で
-cdコマンドで0130-demoのディレクトリまで移動
+本プロジェクトを実行するには、以下のソフトウェアが事前にインストールされている必要があります。
+
+Docker Desktop（最新バージョン推奨）
+
+起動方法
+
+Docker Desktopを起動
+
+プロジェクトディレクトリへ移動
+
+cd final ver
+
+コンテナの起動
 
 docker compose up
-して
-http://localhost:5000/
-にアクセスすると見れます
 
-### 更新ビルド
-cdコマンドでdemo-0130のディレクトリまで移動
+ブラウザでアクセス
+
+http://localhost:5000/
+
+更新ビルド（変更を適用する場合）
+
+プロジェクトディレクトリへ移動
+
+cd final ver
+
+再ビルドとバックグラウンド起動
 
 docker compose up --build -d
 
-### コンテナ削除(作業終了したら...)
-cdコマンドでdemo-0130のディレクトリまで移動
+コンテナの停止と削除（作業終了時）
+
+プロジェクトディレクトリへ移動
+
+cd final ver
+
+コンテナと関連リソースの削除
 
 docker compose down --rmi all
+
+補足
+
+docker compose up -d を使用すると、バックグラウンドでコンテナを起動できます。
+
+docker ps で実行中のコンテナを確認できます。
+
+docker logs <コンテナID> でログを確認できます。
